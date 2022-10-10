@@ -1,0 +1,173 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(217deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,10,32,1) 100%) no-repeat;
+    background-size: 100vw 100vh;
+    color: #fff;
+}
+*{
+    font-family: Roboto 'serif';
+}
+/* NAvigation */
+.nav-bar{
+    display: flex;
+    padding: 15px 5px;
+    justify-content: space-between;
+}
+.nav-brand,
+.nav-btn{
+    display: flex;
+    align-items: center;    
+    width: 25%;
+}
+.nav-brand{
+    font-weight: 500;
+    font-size: 1.75em;
+    margin: 0;
+}
+.nav-brand > img{
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+}
+.nav-list{
+    display: flex;
+}
+li{
+    display: flex;
+}
+.nav-list > li > a{
+    color: #97A1AB;
+    font-weight: 500;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-list > li > a:hover, 
+.nav-list > li > a.active{
+    color: #fff;
+}
+.nav-btn{
+    justify-content: flex-end;
+}
+button{
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: .3s ease-in-out;
+}
+button:hover{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: .3s ease-in-out;
+}
+/* Home Component - 1st Slide */
+#home {
+    margin-top: 110px;
+}
+#home h2{
+    font-size: 4.75em;
+    width: 700px;
+    line-height: 90px;
+}
+.bg{
+    opacity: .2;
+    z-index: -1;
+    display: flex;
+    background: linear-gradient(217deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,10,32,1) 100%),
+    url('../img/bg-vc-5.png') no-repeat center;
+    background-size: 100vw 100vh;
+    background-blend-mode:overlay;
+    height: 700px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0;
+}
+#home .desc{
+    font-size: 1.25em;
+    width: 500px;
+    color: #67ee59;
+}
+.algo{
+    width: 600px;
+    position: relative;
+    height: 600px;
+    float: right;
+    background: url('../img/bg-algo.svg') no-repeat center;
+}
+.apply-btn{
+    font-size: 1.75em;
+}
+.apply-ic{
+    color: #FA292A;
+    font-size: 2em;
+}
+/* 2nd Frame */
+.brands{
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #fff;
+    justify-content: space-around;
+}
+.brands img{
+    width: 150px ;
+}
+.comp-info{
+    border: 10px groove #eaefff;
+    margin-bottom: 50px;
+    position: relative;
+}
+.comp-desc{
+    position: absolute;
+    right: 0;
+    border: 1px solid red;
+    width: 750px;
+    line-height: 40px;
+    font-size: 1.25;
+    margin: 20px 25px;
+    text-align: justify;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+}
+.comp-info > img {
+    width: 100%;
+    height: 650px;
+}
+#package, #help, #cable{
+    border: 1px solid red;
+    height: 500px;
+}
+.bga-2{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    right: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(217deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,10,32,1) 100%) no-repeat;
+    height: 500px;
+    background-size: 100vw 100vh;
+}
