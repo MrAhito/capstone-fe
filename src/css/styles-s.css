@@ -1,0 +1,165 @@
+@media only screen and (max-width: 480px){
+    /* NAv bar */
+    .nav-brand > h1 > span{
+        display: none;
+    }
+    .nav-brand > h1{
+        margin-left: 10px;
+    }
+    .navbar-toggler{
+        margin-right: 10px;
+    }
+    .nav-list {
+        transform: translateX(0);
+        background-color: #040a45;
+        width: 100%;
+        flex-direction: column;
+    }
+    .nav-bar .container{ 
+        padding-left: 0;
+        padding-right: 0;
+    } 
+    .nav-list li {
+        display: block;
+        width: 100%;
+    }
+/* 1st Frame */
+    #home{
+        padding: 50px 10px;
+    }
+    #home img{
+        display: none;
+    }
+    #home h2, #home .desc {
+        font-size: 2.5em;
+        width: 100%;
+        line-height: normal;
+        text-align: center;
+    }
+
+    #home h2{
+        font-size: 2.5em;
+    }
+    #home .desc{
+        font-size: 1em;
+
+    }
+    #home .apply-btn {
+        margin: auto;
+    }       
+    .brands img {
+        height: 40px !important;
+    }
+    .comp-desc{
+        overflow: hidden;
+        margin-top: 75px;
+        padding: 0 ;
+    }
+    .comp-desc > p{
+        padding: 10px ;
+    }
+    .comp-desc > img {
+        margin: 0;
+        opacity: 0.4;
+        position: absolute;
+    }
+    /* 2nd Frame */
+    #package{
+        height: fit-content;
+    }
+    .packages{
+        flex-direction: column;
+        align-items: center;
+    }
+    .pckg-card{
+        width: 80%;
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    .speed-text{
+        width: 150px;
+    }
+    .plan-desc{
+        margin-top: 100px;
+
+    }
+    .plan-info h3 {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+    .plan-info ul li {
+        font-size: .9em;
+    }
+    .plan-info button {
+        font-size: 1em;
+    }
+    .inquiry{
+        height: fit-content;
+    }
+    .contact-cards{
+        flex-wrap: wrap;
+    }
+
+    .contact-cards .card{
+        width: 100%;
+    padding: 10px 10px 10px 100px;
+    height: fit-content;
+    font-size: .8em;
+}
+    .card > h4{
+        font-size: 1.25em;
+    }
+    .card-ic{
+        font-size: 5em;
+        top: 10px;
+        left: 10px;
+    }
+    #contact .bg-ligh {
+        height: 1550px;
+    }
+    .foot-notes{
+        flex-direction: column;
+    }
+    .foot-notes > div{
+        width: 90%;
+        margin: 5px auto 10px;
+    }
+    form, #apply h2{
+        width: 94%;
+    }
+    form{
+        font-size: 0.9em;
+    }
+    .type-label{
+        padding-left: 32px;
+    }
+    .select-type{
+        width: 65%;
+    }
+    .cable-banner > h2, 
+    .cable-banner > p {
+        margin: 0 10px;
+        font-size: 1.5em;
+    }
+    .cable-banner > p{
+        font-size: .9em;
+    }
+    .cable-banner > h2 > span{
+        font-size: 1em;
+    }
+    .cable-banner > button {
+        margin-right: 5px;
+    }
+    .channel-item{
+        width: 185px;
+        margin: 5px 5px 15px;
+        height: 100px;
+    }
+    .channel-logo{
+        height: 85px;
+    }
+    .channel-item span{
+        font-size: .85em;
+    }
+}
+

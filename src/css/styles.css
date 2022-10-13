@@ -2,6 +2,7 @@
 * {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
+    /* color: #040a45; */
 }
 body {
     background: rgb(2, 0, 36);
@@ -21,7 +22,7 @@ body {
     position: sticky;
     top: 0;
     display: flex;
-    padding: 15px 5px;
+    padding: 10px 0;
     justify-content: space-between;
 }
 .nav-bg {
@@ -43,8 +44,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background-size: 100vw 100vh;
 }
-.nav-brand,
-.nav-btn {
+.nav-brand{
     display: flex;
     align-items: center;
     width: 25%;
@@ -53,7 +53,7 @@ body {
 }
 .nav-brand > h1{
     font-weight: 500;
-    font-size: 1.7em;
+    font-size: 1.5em;
     margin: 0;
 }
 .nav-brand h1 > img {
@@ -67,6 +67,7 @@ ul {
     margin: 0;
 }
 .nav-list {
+    transform: translateX(28%);
     display: flex;
 }
 li {
