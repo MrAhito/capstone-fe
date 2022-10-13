@@ -20,13 +20,20 @@ function ApplyPage() {
     const location = useLocation();
     const [show, setShow] = useState(false);
     const [type, setType] = useState(location.state && location.state.type ? location.state.type : '');
+
+    const apply = ( v, e ) => {
+        console.log(v);
+        e.preventDefault();
+
+    }
     return (
             <section id="apply">
                 <h2>Apply Form</h2>
                 <Formik
                     validationSchema={schema}
-                    onSubmit={() => {
-                        setShow(true);
+                    onSubmit={(values, actions ) => {
+                        actions.resetForm();
+                        apply(values, actions);
                     }}
                     initialValues={{
                         fname: "",
