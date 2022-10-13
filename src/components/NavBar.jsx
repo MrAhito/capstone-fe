@@ -1,28 +1,34 @@
-import React, { Component } from "react";
-import { Container } from "react-bootstrap";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
-class NavBar extends Component {
-    render() {
-        return (
-            <Container className="p-0">
-              <nav className="nav-bar">
-                <h1 className="nav-brand">
-                  <img alt="nav-logo" src={require('../img/favicon.ico')} />
+function NavBar() {
+  const location = useLocation();
+    return (
+        <nav className="nav-bar">
+          <Link to="/" className="nav-brand">
+            <h1>
+                  <img alt="nav-logo" src={require("../img/favicon.ico")} />
                   Bataan Space
-                </h1>
-                <ul className="nav-list">
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#package">Package</a></li>
-                  <li><a href="#help">Help & Support</a></li>
-                  <li><a href="#cable">Cable Tv</a></li>
-                </ul>
-                <div className="nav-btn">
-                  <button href="apply">Apply Now</button>
-                </div>
-              </nav>
-            </Container>
-        );
-    }
+            </h1>
+          </Link>
+            <ul className="nav-list">
+                <li>
+                   {location.pathname === "/" ? <a href="#home">Home</a> :  <Link to="/">Home</Link>}
+                </li>
+                <li>
+                   {location.pathname === "/" ? <a href="#package">Package</a> :  <Link to="/">Package</Link>}
+                </li>
+                <li>
+                   {location.pathname === "/" ? <a href="#contact">Contact Us</a> :  <Link to="/">Package</Link>}
+                </li>
+                <li>
+                    <Link to={"cable"}>Cable Tv</Link>
+                </li>
+            </ul>
+            <div className="nav-btn"></div>
+            <div className="nav-bg"></div>
+        </nav>
+    );
 }
 
 export default NavBar;
