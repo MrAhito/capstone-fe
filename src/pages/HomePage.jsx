@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Image } from "react-bootstrap";
+import { Accordion, Image } from "react-bootstrap";
 import * as AI from "react-icons/ai";
 import Package from "../components/Package";
 import PackageType from "../components/PackageType";
 import InfiniteLoop from "infinite-loop-animation";
 import { Link } from "react-router-dom";
-import { packageNet, packageCatv, images, algo } from "../data/data";
+import { packageNet, packageCatv, images, algo, faqs, cardsInq } from "../data/data";
+import { Link as SectionLink } from "react-scroll";
 
 class HomePage extends Component {
     constructor(props) {
@@ -30,10 +31,6 @@ class HomePage extends Component {
     handleChange(checked) {
         this.setState({ package: checked });
     }
-
-    // componentDidMount() {
-    //     window.scrollTo(0, 0);
-    // }
     render() {
         return (
             <>
@@ -50,18 +47,14 @@ class HomePage extends Component {
                             Apply Now <AI.AiOutlineSend className="apply-ic" />
                         </Link>
                     </button>
-                    <InfiniteLoop
-                        data={algo}
-                        duration={500}
-                        size={30}
-                    />
+                    <InfiniteLoop data={algo} duration={500} size={30} />
                     <div className="bg"></div>
                 </section>
                 <section id="info">
                     <div className="bg-ligh"></div>
                     <div className="brands">
                         {images.map((v, i) => (
-                            <InfiniteLoop 
+                            <InfiniteLoop
                                 key={i}
                                 data={this.reorderImages(5 - i)}
                                 duration={1000}
@@ -114,21 +107,51 @@ class HomePage extends Component {
                 </section>
                 <section id="contact">
                     <div className="bg-ligh"></div>
+                    <div className="helps">
+                        <h2>Frequenty Asked Questions</h2>
+                        <Accordion defaultActiveKey="" flush>
+                            {faqs.map((v, i) => (
+                                <Accordion.Item key={i} eventKey={i}>
+                                    <Accordion.Header>
+                                        {v.title}
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        {v.desc}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            ))}
+                        </Accordion>
+                    </div>
+                    <div className="inquiry">
+                        <h3>Still need help?</h3>
+                        <p>You can reach out to us with your concern through email or phone.</p>
+                        <div className="contact-cards">
+                            {cardsInq.map((v, i) => 
+                                <div key={i} className="card">
+                                    {v.ic}
+                                    <h4>{v.title}</h4>
+                                    <p>{v.desc}</p>
+                                    {v.item}
+                                </div>)}
+                        </div>
+                    </div>
                     <div className="mapouter">
-                        <h2>Location</h2>
+                        <h3>Location:</h3>
                         <iframe
                             title="location"
                             width="100%"
-                            height="400"
+                            height="460"
                             id="gmap_canvas"
-                            src={"https://maps.google.com/maps?q=bataan%20space%20cable&t=&z=16&ie=UTF8&iwloc=&output=embed"}
+                            src={
+                                "https://maps.google.com/maps?q=bataan%20space%20cable&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            }
                             frameBorder="0"
                             scrolling="no"
                             marginHeight="0"
                             marginWidth="0"
                         />
                     </div>
-                    <div className="contacts">
+                    <div className="foot-notes">
                         <div className="brand-logo">
                             <span>
                                 <img
@@ -148,39 +171,35 @@ class HomePage extends Component {
                             <h4>Our Service</h4>
                             <ul>
                                 <li>
-                                    <a href="#home">Home</a>
+                                    <SectionLink
+                                        to="home"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0}
+                                        duration={500}
+                                    >
+                                        Home
+                                    </SectionLink>
                                 </li>
                                 <li>
-                                    <a href="#package">Internet</a>
+                                    <SectionLink
+                                        to="package"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0}
+                                        duration={500}
+                                    >
+                                        Internet
+                                    </SectionLink>
                                 </li>
                                 <li>
-                                    <a href="catv">CATv</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Address</h4>
-                            <ul>
-                                <li>
-                                    <AI.AiOutlineMail className="ic" />{" "}
-                                    <span>bscnicompany@gmail.com</span>
-                                </li>
-                                <li>
-                                    <AI.AiOutlinePhone className="ic" />{" "}
-                                    <span>09123456789</span>
-                                </li>
-                                <li>
-                                    <AI.AiOutlineShop className="ic" />
-                                    <span>
-                                        #156 Cuaderno Ave. Doña Francisca,
-                                        Balanga City Bataan
-                                    </span>
+                                    <Link to={"cable"}>Cable Tv</Link>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <h4>Social Media</h4>
-                            <a href="https://www.facebook.com/profile.php?id=100083135060391">
+                            <a href="https://www.facebook.com/profile.php?id=100083135060391" target="_blank" rel="noopener noreferrer">
                                 <AI.AiFillFacebook className="ic" /> Facebook
                             </a>
                         </div>

@@ -1,32 +1,33 @@
-import React, {useEffect} from "react";
-import { Link, useLocation } from "react-router-dom";
-
+import React, { useEffect } from "react";
+import { Link as Linkv2, useLocation } from "react-router-dom";
+import { animateScroll as scroll, Link } from "react-scroll";
+import { navLinks } from "../data/data";
 function NavBar() {
-  const location = useLocation();
+    const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, -10)
-  }, [location.pathname])
+    useEffect(() => {
+        scroll.scrollToTop();
+    }, [location.pathname]);
     return (
         <nav className="nav-bar">
-          <Link to="/" className="nav-brand">
-            <h1>
-                  <img alt="nav-logo" src={require("../img/favicon.ico")} />
-                  Bataan Space
-            </h1>
-          </Link>
+            <Link to="/" className="nav-brand">
+                <h1>
+                    <img alt="nav-logo" src={require("../img/favicon.ico")} />
+                    Bataan Space
+                </h1>
+            </Link>
             <ul className="nav-list">
                 <li>
-                   {location.pathname === "/" ? <a href="#home">Home</a> :  <Link to="/">Home</Link>}
+                    {navLinks.map((v, i) => location.pathname === "/" ? (
+                        <Link key={i} activeClass="active" to={v.to} spy={true} smooth={true} offset={v.to ==="contact" ? -125 : 0} duration={500}>
+                            {v.name}
+                        </Link>
+                    ) : (
+                        <Linkv2 key={i} to="/">{v.name}</Linkv2>
+                    ))}
                 </li>
                 <li>
-                   {location.pathname === "/" ? <a href="#package">Package</a> :  <Link to="/">Package</Link>}
-                </li>
-                <li>
-                   {location.pathname === "/" ? <a href="#contact">Contact Us</a> :  <Link to="/">Contact Us</Link>}
-                </li>
-                <li>
-                    <Link to={"cable"}>Cable Tv</Link>
+                    <Linkv2 to={"cable"}>Cable Tv</Linkv2>
                 </li>
             </ul>
             <div className="nav-btn"></div>
