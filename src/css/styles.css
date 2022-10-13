@@ -1,7 +1,7 @@
 
 * {
     scroll-behavior: smooth;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body {
     background: rgb(2, 0, 36);
@@ -63,6 +63,7 @@ body {
 }
 ul {
     list-style-type: none;
+    padding: 0;
     margin: 0;
 }
 .nav-list {
@@ -166,8 +167,14 @@ section {
 .apply-btn {
     font-size: 1.25em;
     border: 3px solid #fa292a;
+    padding: 0;
+    display: flex;
+    animation: tada; 
+    animation-duration: 2s;
 }
 .apply-btn > a{
+    padding: 10px 20px;
+    width: 100%;
     color: #fff;
     text-decoration: none;
 }
@@ -319,7 +326,6 @@ section {
 .plan-info ul {
     width: fit-content;
     margin: 0 auto 20px;
-    padding: 0;
 }
 .plan-info ul li {
     display: flex;
@@ -331,14 +337,16 @@ section {
     margin-right: 10px;
 }
 .plan-info button {
-    width: 200px;
-    color: #040a45;
-    padding: 5px;
+    margin: auto;
+    animation-iteration-count: infinite;
+    background-color: #040a45;
 }
 .plan-info button:hover {
+    background-color: #040b45b4;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     transition: 0.3s ease-in-out;
-    color: #fff;
-    background-color: #040a45;
+
 }
 /* 4th  Frame */
 #contact{
@@ -398,9 +406,6 @@ footer a:hover{
 .contacts h4{
     border-bottom: 3px solid #97a1ab ;
 }
-.contacts ul{
-    padding: 0;
-}
 .contacts li{
     display: flex;
     align-items: center;
@@ -419,15 +424,13 @@ footer{
     border-top: 2px solid #97a1ab;
     text-align: center;
     padding: 15px ;
+    /* position: absolute;
+    bottom: 0; */
 }
 /* Apply */
 #apply{
-    height: 100vh;
-    padding: 25px 0;
-}
-#apply .bg{
-    top: 74px;
-
+    margin-top: -55px;
+    padding:75px 0 25px ;
 }
 form, #apply h2{
     width: 50%;
@@ -456,4 +459,85 @@ input[type=text]{
 }
 .select-type{
     width: 350px;
+}
+/* Cable */
+#cable{
+    display: flex;
+    flex-direction: column;
+}
+.cable-banner{
+    margin: 0 auto;
+}
+.cable-banner > img {
+    object-fit: cover;
+    width: 50%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    height: 350px;
+    margin-bottom: 15px;
+    animation: zoomInUp; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+.cable-banner > p > span {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0 5px;
+}
+.cable-banner > button {
+    animation-iteration-count: infinite;
+    float: right;
+}
+.channel-list{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.channel-item{
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    width: 235px;
+    margin: 10px 10px 25px;
+    height: 150px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+}
+.channel-item:hover {
+    animation: tada; 
+    animation-duration: 2s;
+}
+.channel-logo{
+    width: 100%;
+    padding: 20px 0;
+    justify-content: center;
+    display: flex;
+    height: 125px;
+}
+.channel-logo img{
+    object-fit: fill;
+    max-width:100%;
+    max-height:100%;
+}
+.channel-item span{
+    color: #040a45;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+    background-color:  rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2.4px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.hd-ico{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 0;
+    margin: 5px;
 }

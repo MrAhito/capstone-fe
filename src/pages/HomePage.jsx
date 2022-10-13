@@ -5,6 +5,7 @@ import Package from "../components/Package";
 import PackageType from "../components/PackageType";
 import InfiniteLoop from "infinite-loop-animation";
 import { Link } from "react-router-dom";
+import { packageNet, packageCatv, images, algo } from "../data/data";
 
 class HomePage extends Component {
     constructor(props) {
@@ -12,34 +13,10 @@ class HomePage extends Component {
 
         this.state = {
             package: true,
-            packageNet: [
-                { mbps: 100, price: 1500, speed: 107, add: 40 },
-                { mbps: 150, price: 2250, speed: 137, add: 70 },
-                { mbps: 250, price: 2750, speed: 190, add: 140 },
-            ],
-            packageCatv: [
-                { mbps: 15, price: 1350, speed: 40, add: -8 },
-                { mbps: 30, price: 1600, speed: 50, add: 0 },
-                { mbps: 50, price: 1750, speed: 65, add: 13 },
-            ],
-            images: [
-                require("../img/yout.png"),
-                require("../img/google.png"),
-                require("../img/faceb.png"),
-                require("../img/insta.png"),
-                require("../img/netflix.png"),
-                require("../img/riot.png"),
-            ],
-            algo: [
-                require("../img/algo.png"),
-                require("../img/algo1.png"),
-                require("../img/algo2.png"),
-                require("../img/algo3.png"),
-            ],
         };
     }
     reorderImages(i) {
-        var arr2 = this.state.images,
+        var arr2 = images,
             arr = [];
         for (var a = 0; a < 6; a++) {
             if (i > 5) {
@@ -53,6 +30,10 @@ class HomePage extends Component {
     handleChange(checked) {
         this.setState({ package: checked });
     }
+
+    // componentDidMount() {
+    //     window.scrollTo(0, 0);
+    // }
     render() {
         return (
             <>
@@ -70,8 +51,8 @@ class HomePage extends Component {
                         </Link>
                     </button>
                     <InfiniteLoop
-                        data={this.state.algo}
-                        duration={1200}
+                        data={algo}
+                        duration={500}
                         size={30}
                     />
                     <div className="bg"></div>
@@ -79,11 +60,11 @@ class HomePage extends Component {
                 <section id="info">
                     <div className="bg-ligh"></div>
                     <div className="brands">
-                        {this.state.images.map((v, i) => (
+                        {images.map((v, i) => (
                             <InfiniteLoop 
                                 key={i}
                                 data={this.reorderImages(5 - i)}
-                                duration={1200}
+                                duration={1000}
                                 size={30}
                             />
                         ))}
@@ -123,10 +104,10 @@ class HomePage extends Component {
                     />
                     <div className="packages">
                         {this.state.package
-                            ? this.state.packageCatv.map((v, i) => (
+                            ? packageCatv.map((v, i) => (
                                   <Package key={i} data={v} />
                               ))
-                            : this.state.packageNet.map((v, i) => (
+                            : packageNet.map((v, i) => (
                                   <Package key={i} data={v} />
                               ))}
                     </div>
@@ -205,10 +186,6 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </section>
-                <footer>
-                    <a href="https://github.com/MrAhito">MrAhito</a> •{" "}
-                    <AI.AiOutlineCoffee /> • Capstone FE 2022
-                </footer>
             </>
         );
     }

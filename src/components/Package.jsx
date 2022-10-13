@@ -5,6 +5,7 @@ import { easeQuadInOut } from "d3-ease";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import * as AI from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 class Package extends Component {
     constructor(props) {
@@ -55,7 +56,10 @@ class Package extends Component {
                             <li><AI.AiOutlineCheck className="check" />1 year lock in contract</li>
                         </ul>
                         <button className="apply-btn">
-                            Apply Now <AI.AiOutlineSend className="apply-ic" />{" "}
+
+                        <Link to="apply" state={{type: "new", price: this.props.data.price, plan:this.props.data.mbps }}>
+                            Apply Now <AI.AiOutlineSend className="apply-ic" />
+                        </Link>
                         </button>
                     </div>
                 </div>

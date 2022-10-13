@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, -10)
+  }, [location.pathname])
     return (
         <nav className="nav-bar">
           <Link to="/" className="nav-brand">
@@ -19,7 +23,7 @@ function NavBar() {
                    {location.pathname === "/" ? <a href="#package">Package</a> :  <Link to="/">Package</Link>}
                 </li>
                 <li>
-                   {location.pathname === "/" ? <a href="#contact">Contact Us</a> :  <Link to="/">Package</Link>}
+                   {location.pathname === "/" ? <a href="#contact">Contact Us</a> :  <Link to="/">Contact Us</Link>}
                 </li>
                 <li>
                     <Link to={"cable"}>Cable Tv</Link>
