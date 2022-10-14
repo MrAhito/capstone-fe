@@ -9,11 +9,12 @@
 An E-commerce web app for a local internet and cable service provider
 
 ## Features
-
+- User - Friendly UI.
+- Mobile Responsive
 - Dynamic Landing page.
-- Costumer Support/Suggestion.
+- Contact Us page.
+- Product Information.
 - Customer Application.
-- ...
     
 ## Demo
    
