@@ -157,7 +157,7 @@
         margin-right: 5px;
     }
     .channel-item{
-        width: 185px;
+        width: 42%;
         margin: 5px 5px 15px;
         height: 100px;
     }
@@ -165,6 +165,9 @@
         height: 85px;
     }
     .channel-item span{
+        height: 30px;
+        width: 100%;
+        text-overflow: ellipsis;
         font-size: .85em;
     }
 }
