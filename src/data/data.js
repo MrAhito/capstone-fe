@@ -201,6 +201,12 @@ const cardsInq = [
         item: <span> bscni.cs@bataanspacecable.com </span>,
     },
     {
+        ic: <AI.AiOutlineFacebook className="card-ic"/>,
+        title: "Message us on Facebook",
+        desc: "Visit our official facebook page and message your concern together with your Account Information and documents if available",
+        item: <a href="https://www.facebook.com/profile.php?id=100083135060391" target="_blank" rel="noopener noreferrer">@Bataan Space Cable</a>,
+    },
+    {
         ic: <AI.AiOutlinePhone className="card-ic"/>,
         title: "Contact Us",
         desc: <>Call our personel to settle your issue or<br/> Send us a text message regards of your concern together with your Account Information and documents if available</>,
@@ -209,12 +215,6 @@ const cardsInq = [
                 <span>237-2611 / 237-0050 - For Billing Issue</span>
              </>,
     },
-    {
-        ic: <AI.AiOutlineFacebook className="card-ic"/>,
-        title: "Message us on Facebook",
-        desc: "Visit our official facebook page and message your concern together with your Account Information and documents if available",
-        item: <a href="https://www.facebook.com/profile.php?id=100083135060391" target="_blank" rel="noopener noreferrer">@Bataan Space Cable</a>,
-    }
 ]
 
 export {

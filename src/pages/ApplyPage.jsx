@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import * as AI from "react-icons/ai";
 import { newType, existType, plansNet, plansTvNet } from "../data/data";
 import emailjs from '@emailjs/browser';
-
+// Form Validation conditions
 const schema = yups.object().shape({
     fname: yups.string().required().min(5),
     addr: yups.string().required().min(15),
@@ -18,11 +18,12 @@ const schema = yups.object().shape({
 });
 
 function ApplyPage() {
-    const location = useLocation();
+    const location = useLocation(); 
     const [show, setShow] = useState(false);
     const [type, setType] = useState(location.state && location.state.type ? location.state.type : '');
 
     const apply = ( v, a ) => {
+        // Reformating type and data value.
         var type = '', plan ='', subs  = v.type.split('-'), planD={}, tempData ={};
         if(subs.length > 1 && subs[0] === 'new'){
             type = "New Install - " + newType.filter((e) => e.val === v.type)[0].name;
@@ -48,7 +49,7 @@ function ApplyPage() {
                 }
             }
         }
-
+// Variable asigning for sendinf email
         tempData.from_name = v.fname;
         tempData.contact_no = v.cnum;
         tempData.address = v.addr;

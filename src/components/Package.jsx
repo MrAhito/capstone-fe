@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
-import AnimatedProgressProvider from "../api/AnimatedProgressProvider";
+import AnimatedProgressProvider from "../functions/AnimatedProgressProvider";
 import { easeQuadInOut } from "d3-ease";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -8,13 +8,6 @@ import * as AI from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 class Package extends Component {
-    constructor(props) {
-      super(props)
-    
-      this.state = {
-         progress : 0,
-      }
-    }
     render() {
         return (
             <Card className="pckg-card">

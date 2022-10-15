@@ -220,6 +220,7 @@ section {
     color: #040a45;
 }
 .comp-desc {
+    border: 1px solid red;
     display: flex;
     padding: 20px;
     border-radius: 20px;
@@ -228,7 +229,7 @@ section {
     -webkit-backdrop-filter: blur(3px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-}
+}   
 .comp-desc > p {
     padding-right: 20px;
     height: fit-content;
@@ -236,6 +237,8 @@ section {
     font-size: 1.25;
     text-align: justify;
     margin: auto;
+    width: 50%;
+    
 }
 .comp-title {
     text-align: start;
@@ -247,7 +250,7 @@ section {
 .comp-desc > img {
     vertical-align: bottom;
     display: inline-block;
-    width: 780px;
+    width: 50%;
     z-index: -1;
     bottom: 0;
     height: 475px;
@@ -409,7 +412,7 @@ section {
 .contact-cards .card{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
     display: flex;
-    height: 225px;
+    height: fit-content;
     width: 45%;
     text-align: start;
     padding: 25px 25px 25px 150px;

@@ -17,12 +17,10 @@ class HomePage extends Component {
         };
     }
     reorderImages(i) {
-        var arr2 = images,
-            arr = [];
+        var arr2 = images, arr = [];
+
         for (var a = 0; a < 6; a++) {
-            if (i > 5) {
-                i = 0;
-            }
+            if (i > 5) { i = 0; }
             arr.push(arr2[i]);
             i++;
         }
@@ -31,6 +29,7 @@ class HomePage extends Component {
     handleChange(checked) {
         this.setState({ package: checked });
     }
+    
     render() {
         return (
             <>

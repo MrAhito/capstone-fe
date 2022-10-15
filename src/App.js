@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import NavBar from './components/NavBar';
 import  './css/styles.css';
 import  './css/styles-s.css';
 import  './css/styles-m.css';
+import NavBar from './components/NavBar';
+import HomePage from './pages/HomePage';
 import ApplyPage from './pages/ApplyPage';
 import CablePage from './pages/CablePage';
 import Footer from './components/Footer';

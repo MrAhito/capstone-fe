@@ -1,6 +1,103 @@
-@media only screen and (min-width: 481px){
-    .med-1 {
-        /* anything with the class .med-1 will get 25% of the available width if the screen's width is greater than 480px */
-        width: 25%;
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nav-brand > h1 > span{
+        display: none;
+    }
+    .nav-brand > h1{
+        margin-left: 10px;
+    }
+    .navbar-toggler{
+        margin-right: 10px;
+    }
+    .nav-list {
+        transform: translateX(0);
+        background-color: #040a45;
+        width: 100%;
+        flex-direction: column;
+    }
+    .nav-bar .container{ 
+        padding-left: 0;
+        padding-right: 0;
+    } 
+    .nav-list li {
+        display: block;
+        width: 100%;
+    }
+    
+    #home img {
+        display: none;
+    } 
+    .brands img {
+        height: 60px !important;
+    }
+    .pckg-card{
+        width: 30%;
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    .speed-text{
+        width: 150px;
+    }
+    .plan-desc{
+        margin-top: 100px;
+
+    }
+    .plan-info h3 {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+    .plan-info ul li {
+        font-size: .9em;
+    }
+    .plan-info button {
+        font-size: 1em;
+    }
+
+    .contact-cards .card{
+        padding: 10px 10px 10px 100px;
+        height: fit-content;
+        font-size: .9em;
+        height: 200px;
+    }
+    .card > h4{
+        font-size: 1.2em;
+    }
+    .card-ic{
+        font-size: 5em;
+        top: 10px;
+        left: 10px;
+    }
+
+    #contact .bg-ligh {
+        height: 1000px;
+    }
+
+    .foot-notes{
+        margin: 0 30px;
+    }
+    #apply{
+        position: relative;
+    }
+    form{
+        width: 65%;
+        font-size: 0.9em;
+    }
+
+    .cable-banner > h2, 
+    .cable-banner > p {
+        margin: 0 20px;
+    }
+    .cable-banner > p{
+        margin-bottom: 20px;
+    } 
+
+    .cable-banner > button {
+        margin-right: 25px;
     }
 }
