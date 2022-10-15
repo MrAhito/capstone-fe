@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { useLocation } from "react-router-dom";
 import * as AI from "react-icons/ai";
 import { newType, existType, plansNet, plansTvNet } from "../data/data";
+import emailjs from '@emailjs/browser';
 
 const schema = yups.object().shape({
     fname: yups.string().required().min(5),
@@ -21,20 +22,58 @@ function ApplyPage() {
     const [show, setShow] = useState(false);
     const [type, setType] = useState(location.state && location.state.type ? location.state.type : '');
 
-    const apply = ( v, e ) => {
-        console.log(v);
-        e.preventDefault();
+    const apply = ( v, a ) => {
+        var type = '', plan ='', subs  = v.type.split('-'), planD={}, tempData ={};
+        if(subs.length > 1 && subs[0] === 'new'){
+            type = "New Install - " + newType.filter((e) => e.val === v.type)[0].name;
+            console.log(type);
+        }else{
+            type = "Existing Subscriber - " + existType.filter((e) => e.val === v.type)[0].name;
+        }
+        if(subs.length > 1) {
+            if( subs[1] === "tv"){
+                plan = "Cable Subscription - ₱ 350.00/month"
+            }else{
+                if(subs[1] === "net"){
+                    planD = plansNet.filter((e) => e.val+"" === v.plan);
+                }else if(subs[1] === "netv") {
+                    planD = plansTvNet.filter((e) => e.val+"" === v.plan);
+                }
+                if(planD.length > 0){
+                    plan = "Plan "+planD[0].mbps +"mbps +CATv - ₱ " + planD[0].val + ".00/month";
+                }else{
+                    a.setFieldError("plan", "error");
+                    a.setFieldValue("plan", "");
+                    return;
+                }
+            }
+        }
 
+        tempData.from_name = v.fname;
+        tempData.contact_no = v.cnum;
+        tempData.address = v.addr;
+        tempData.email = v.email;
+        tempData.type = type;
+        tempData.plan = plan;
+
+        emailjs.send('service_vudz76p','template_au933lh', tempData, 'fh3FdXZaiy-6BdO6s')
+            .then((response) => {
+                setShow(true);
+                a.resetForm();
+            }, (err) => {
+               console.log('FAILED...', err);
+            });
+            
     }
     return (
             <section id="apply">
                 <h2>Apply Form</h2>
                 <Formik
                     validationSchema={schema}
-                    onSubmit={(values, actions ) => {
-                        actions.resetForm();
-                        apply(values, actions);
-                    }}
+                    onSubmit={(values, actions ) => { 
+                        apply(values, actions); 
+                        
+                    } }
                     initialValues={{
                         fname: "",
                         addr: "",
@@ -181,6 +220,8 @@ function ApplyPage() {
                                                         onChange={() => {
                                                             values.type = "";
                                                             values.plan = "";
+                                                            errors.type = true;
+                                                            errors.plan = true;
                                                             setType("exist");
                                                         }}
                                                     />
@@ -241,7 +282,7 @@ function ApplyPage() {
                                                 <option value="" hidden >Select Plan</option>
                                                 {values.type === "new-tv" ||
                                                 values.type === "exi-tv"
-                                                    ?   <option  value="350">
+                                                    ?   <option value="350">
                                                             Cable Subscription - ₱ 350.00/month
                                                         </option>
                                                     : ""}
@@ -290,23 +331,21 @@ function ApplyPage() {
                             <Alert
                                 className="position-absolute top-50 start-50 translate-middle"
                                 show={show}
-                                variant="success"
+                                variant="primary"
                             >
                                 <Alert.Heading>
-                                    Welcome to my Simple App
+                                    Thank You for Applying to our site.
                                 </Alert.Heading>
                                 <p>
-                                    Thank you for signing up to my app,{" "}
-                                    {values.fname}. You will be notified for
-                                    future updates for this app.
+                                    You will be notified once the application is out for installation, Thank you!.
                                 </p>
                                 <hr />
                                 <div className="d-flex justify-content-end">
                                     <Button
-                                        onClick={() => setShow(false)}
-                                        variant="outline-success"
+                                        onClick={() => setShow(false) }
+                                        variant="outline-primary"
                                     >
-                                        Close me y'all!
+                                        Okay
                                     </Button>
                                 </div>
                             </Alert>

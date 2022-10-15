@@ -1,8 +1,7 @@
 
 * {
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
-    /* color: #040a45; */
+    font-family:'Muli', Arial,sans-serif;
 }
 body {
     background: rgb(2, 0, 36);
