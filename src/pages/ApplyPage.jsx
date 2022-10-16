@@ -56,7 +56,8 @@ function ApplyPage() {
         tempData.email = v.email;
         tempData.type = type;
         tempData.plan = plan;
-
+// https://www.emailjs.com/docs/examples/reactjs/
+// For EmaillJs React
         emailjs.send('service_vudz76p','template_au933lh', tempData, 'fh3FdXZaiy-6BdO6s')
             .then((response) => {
                 setShow(true);
@@ -338,7 +339,7 @@ function ApplyPage() {
                                     Thank You for Applying to our site.
                                 </Alert.Heading>
                                 <p>
-                                    You will be notified once the application is out for installation, Thank you!.
+                                    You will get notified once the application is out for installation, Thank you!.
                                 </p>
                                 <hr />
                                 <div className="d-flex justify-content-end">

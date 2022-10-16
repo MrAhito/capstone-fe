@@ -1,12 +1,12 @@
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px) {
     /* NAv bar */
-    .nav-brand > h1 > span{
+    .nav-brand > h1 > span {
         display: none;
     }
-    .nav-brand > h1{
+    .nav-brand > h1 {
         margin-left: 10px;
     }
-    .navbar-toggler{
+    .navbar-toggler {
         margin-right: 10px;
     }
     .nav-list {
@@ -15,51 +15,54 @@
         width: 100%;
         flex-direction: column;
     }
-    .nav-bar .container{ 
+    .nav-bar .container {
         padding-left: 0;
         padding-right: 0;
-    } 
+    }
     .nav-list li {
         display: block;
         width: 100%;
     }
-/* 1st Frame */
-    #home{
+    /* 1st Frame */
+    #home {
         padding: 50px 10px;
     }
-    #home img{
+    #home img {
         display: none;
     }
-    #home h2, #home .desc {
+    #home h2,
+    #home .desc {
         font-size: 2.5em;
         width: 100%;
         line-height: normal;
         text-align: center;
     }
 
-    #home h2{
+    #home h2 {
         font-size: 2.5em;
     }
-    #home .desc{
+    #home .desc {
         font-size: 1em;
-
     }
     #home .apply-btn {
         margin: auto;
-    }       
+    }
     .brands img {
         height: 40px !important;
     }
-    #info{
+    #info {
+        margin-top: -100px;
         height: fit-content;
+        overflow-y:visible;
+        padding: 0 0 50px;
     }
-    .comp-desc{
+    .comp-desc {
         overflow: hidden;
         margin-top: 75px;
         padding: 0;
     }
-    .comp-desc > p{
-        padding: 15px ;
+    .comp-desc > p {
+        padding: 15px;
         width: 100%;
     }
     .comp-desc > img {
@@ -70,52 +73,51 @@
         position: absolute;
     }
     /* 2nd Frame */
-    #package{
+    #package {
         height: fit-content;
     }
-    .packages{
+    .packages {
         flex-direction: column;
         align-items: center;
     }
-    .pckg-card{
+    .pckg-card {
         width: 80%;
         height: 400px;
         margin-bottom: 50px;
     }
-    .speed-text{
+    .speed-text {
         width: 150px;
     }
-    .plan-desc{
+    .plan-desc {
         margin-top: 100px;
-
     }
     .plan-info h3 {
         font-size: 1em;
         margin-top: 20px;
     }
     .plan-info ul li {
-        font-size: .9em;
+        font-size: 0.9em;
     }
     .plan-info button {
         font-size: 1em;
     }
-    .inquiry{
+    .inquiry {
         height: fit-content;
     }
-    .contact-cards{
+    .contact-cards {
         flex-wrap: wrap;
     }
 
-    .contact-cards .card{
+    .contact-cards .card {
         width: 100%;
-    padding: 10px 10px 10px 100px;
-    height: fit-content;
-    font-size: .8em;
-}
-    .card > h4{
+        padding: 10px 10px 10px 100px;
+        height: fit-content;
+        font-size: 0.8em;
+    }
+    .card > h4 {
         font-size: 1.25em;
     }
-    .card-ic{
+    .card-ic {
         font-size: 5em;
         top: 10px;
         left: 10px;
@@ -123,52 +125,72 @@
     #contact .bg-ligh {
         height: 1550px;
     }
-    .foot-notes{
+    .foot-notes {
         flex-direction: column;
     }
-    .foot-notes > div{
+    .foot-notes > div {
         width: 90%;
         margin: 5px auto 10px;
     }
-    form, #apply h2{
+    form,
+    #apply h2 {
         width: 94%;
     }
-    form{
+    form {
         font-size: 0.9em;
     }
-    .type-label{
+    .type-label {
         padding-left: 32px;
     }
-    .select-type{
+    .select-type {
         width: 65%;
     }
-    .cable-banner > h2, 
+    .alert {
+        width: 94%;
+    }
+    .cable-banner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column  ;
+    }
+    .cable-banner > img {
+        width: 100%;
+        margin: 0;
+        height: 150px;
+    }
+    .cable-banner > h2,
     .cable-banner > p {
-        margin: 0 10px;
+        padding: 15px 15px 0;
+        width: 100%;
         font-size: 1.5em;
     }
-    .cable-banner > p{
-        font-size: .9em;
+    .cable-banner > p {
+        padding: 0 15px 75px;
+        font-size: 0.9em;
     }
-    .cable-banner > h2 > span{
+    .cable-banner > h2 > span {
         font-size: 1em;
     }
     .cable-banner > button {
-        margin-right: 5px;
+        position: absolute;
+        bottom: 0;
+        font-size: 0.9em;
+        width: auto;
+        margin: 0 0 15px;
     }
-    .channel-item{
+    .channel-item {
         width: 42%;
         margin: 5px 5px 15px;
         height: 100px;
     }
-    .channel-logo{
+    .channel-logo {
         height: 85px;
     }
-    .channel-item span{
+    .channel-item span {
         height: 30px;
         width: 100%;
         text-overflow: ellipsis;
-        font-size: .85em;
+        font-size: 0.85em;
     }
 }
-

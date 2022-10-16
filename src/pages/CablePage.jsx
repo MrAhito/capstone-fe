@@ -17,7 +17,7 @@ class CablePage extends Component {
                         alt="cable banner-img"
                         src={require("../img/hbanner2.jpg")}
                     />
-                    <button type="submit" className="apply-btn w-25">
+                    <button type="submit" className="apply-btn">
                         <Link to="/apply" state={{type: "new", price: 350, plan: "cable" }}>
                             Apply Now <AI.AiOutlineSend className="apply-ic" />
                         </Link>
@@ -28,7 +28,9 @@ class CablePage extends Component {
                         favorite local and international channel in HD.
                     </p>
                 </div>
-
+                <h3>
+                    Channel List
+                </h3>
                 <ul className="channel-list">
                     {channels.map((v, i) => (
                         <li key={i} className="channel-item">
