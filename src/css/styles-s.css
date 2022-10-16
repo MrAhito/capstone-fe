@@ -47,18 +47,21 @@
     #home .apply-btn {
         margin: auto;
     }
+    .brands{
+        width: 94%;
+        margin: 0 auto;
+    }
     .brands img {
-        height: 40px !important;
+        height: 35px !important;
     }
     #info {
-        margin-top: -100px;
         height: fit-content;
         overflow-y:visible;
         padding: 0 0 50px;
     }
     .comp-desc {
         overflow: hidden;
-        margin-top: 75px;
+        margin-top: 25px;
         padding: 0;
     }
     .comp-desc > p {
