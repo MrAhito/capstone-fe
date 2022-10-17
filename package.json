@@ -1,5 +1,6 @@
 {
-  "name": "props",
+  "name": "bataan-space-cable",
+  "homepage": "https://bataanspacecable.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
